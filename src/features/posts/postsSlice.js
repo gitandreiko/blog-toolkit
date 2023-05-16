@@ -103,9 +103,6 @@ const postsSlice = createSlice({
         existingPost.reactions[reaction]++
       }
     },
-    increaseCount(state, action) {
-      state.count = state.count + 1
-    },
   },
   extraReducers(builder) {
     builder
@@ -180,6 +177,6 @@ export const selectPostsByUser = createSelector(
   (posts, userId) => posts.filter((post) => post.userId === userId)
 )
 
-export const { reactionAdded, increaseCount } = postsSlice.actions
+export const { reactionAdded } = postsSlice.actions
 
 export default postsSlice.reducer
